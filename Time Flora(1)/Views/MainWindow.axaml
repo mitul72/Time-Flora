@@ -1,0 +1,61 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:Time_Flora_1_.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="350" d:DesignHeight="500" Width="350" Height="500"
+        x:Class="Time_Flora_1_.Views.MainWindow"
+        Icon="/Assets/Time_Flora.ico"
+        Title="Time Flora"
+        CanResize="False"
+        WindowStartupLocation="CenterScreen">
+    <!-- ExtendClientAreaToDecorationsHint="True" -->
+    <!-- ExtendClientAreaChromeHints="NoChrome" -->
+    <!-- ExtendClientAreaTitleBarHeightHint="-1" -->
+
+
+	<Design.DataContext>
+        <!-- This only sets the DataContext for the previewer in an IDE,
+             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+
+    <!-- <StackPanel Background="#222222"> -->
+    <!--     <Grid Background="Orange" Height="40" ColumnDefinitions="Auto, Auto, *, Auto, Auto"> -->
+    <!--         <Rectangle Fill="Red" Width="40"></Rectangle> -->
+    <!--     </Grid> -->
+    <!-- </StackPanel> -->
+    <Grid RowDefinitions="Auto Auto * Auto" Background="#222222">
+        <Grid>
+            <StackPanel HorizontalAlignment="Right" Margin="0 15 15 0">
+                
+                <!-- <Label Foreground="White">Test</Label> -->
+                <!-- <Label Foreground="White">Test</Label> -->
+                <Image Source="../Assets/More_Options.png" Width="20"></Image>
+                <Image Source="../Assets/SettingsIcon.png" Width="24" Margin="0 20 0 0"></Image>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Row="1">
+            <StackPanel HorizontalAlignment="Center" Margin="0 30 0 0">
+                <Label Foreground="White" FontSize="30" Margin="0 0 0 20">Keep focus</Label>
+                <Label HorizontalAlignment="Center" Foreground="White">You got this!</Label>
+            </StackPanel>
+        </Grid>
+		<Grid Grid.Row="2">
+            <Image Source="/Assets/Hotpot.png" Width="180"></Image>
+        </Grid>
+        <Grid Grid.Row="3">
+            <Grid ColumnDefinitions="Auto Auto Auto" HorizontalAlignment="Center" Margin="0 0 0 40">
+                <Button CornerRadius="10" Background="#222222" Grid.Column="0"  FontSize="25" Foreground="White" x:Name="angular_bracket_left" Content="{Binding AngularBrackLeft}"></Button>
+                <TextBlock Grid.Column="1" FontSize="40" Text="90:00" Foreground="White" Margin="45 0 45 2"></TextBlock>
+                <Button CornerRadius="10" Background="#222222" Grid.Column="2"  FontSize="25" x:Name="angular_bracket_right" Foreground="White" Content="{Binding AngularBrackRight}"></Button>
+
+			</Grid>
+        </Grid>
+
+	</Grid>
+    
+
+    <!-- <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/> -->
+
+</Window>
