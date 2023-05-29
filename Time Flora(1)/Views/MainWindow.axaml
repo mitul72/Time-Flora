@@ -25,7 +25,7 @@
     <!--         <Rectangle Fill="Red" Width="40"></Rectangle> -->
     <!--     </Grid> -->
     <!-- </StackPanel> -->
-    <Grid RowDefinitions="Auto Auto * Auto" Background="#222222">
+    <Grid RowDefinitions="Auto Auto * Auto Auto" Background="#222222">
         <Grid>
             <StackPanel HorizontalAlignment="Right" Margin="0 15 15 0">
                 
@@ -46,11 +46,15 @@
         </Grid>
         <Grid Grid.Row="3">
             <Grid ColumnDefinitions="Auto Auto Auto" HorizontalAlignment="Center" Margin="0 0 0 40">
-                <Button CornerRadius="10" Background="#222222" Grid.Column="0"  FontSize="25" Foreground="White" x:Name="angular_bracket_left" Content="{Binding AngularBrackLeft}"></Button>
-                <TextBlock Grid.Column="1" FontSize="40" Text="90:00" Foreground="White" Margin="45 0 45 2"></TextBlock>
+                <Button Click="Angular_bracket_left_OnClick" CornerRadius="10" Background="#222222" Grid.Column="0"  FontSize="25" Foreground="White" x:Name="angular_bracket_left" Content="{Binding AngularBrackLeft}"></Button>
+                <Button x:Name="TimerButton" Grid.Column="1" CornerRadius="18" Background="#222222" FontSize="40" Content="{Binding minuteSeconds}" Foreground="White" Margin="45 0 45 2"></Button>
+                <!-- <TextBlock Grid.Column="1" FontSize="40" Text="{Binding minuteSeconds}" Foreground="White" Margin="45 0 45 2"></TextBlock> -->
                 <Button CornerRadius="10" Background="#222222" Grid.Column="2"  FontSize="25" x:Name="angular_bracket_right" Foreground="White" Content="{Binding AngularBrackRight}"></Button>
 
 			</Grid>
+        </Grid>
+		<Grid Grid.Row="4">
+            <ProgressBar Height="20"  Classes="" ShowProgressText="True" Value="{Binding progress}"></ProgressBar>
         </Grid>
 
 	</Grid>
