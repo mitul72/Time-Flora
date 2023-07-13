@@ -9,6 +9,8 @@
         Title="Time Flora"
         CanResize="False"
         WindowStartupLocation="CenterScreen">
+
+
     <!-- ExtendClientAreaToDecorationsHint="True" -->
     <!-- ExtendClientAreaChromeHints="NoChrome" -->
     <!-- ExtendClientAreaTitleBarHeightHint="-1" -->
@@ -25,7 +27,7 @@
     <!--         <Rectangle Fill="Red" Width="40"></Rectangle> -->
     <!--     </Grid> -->
     <!-- </StackPanel> -->
-    <Grid RowDefinitions="Auto Auto * Auto Auto" Background="#222222">
+    <Grid RowDefinitions="Auto Auto * Auto Auto" Background="#1C1B24">
         <Grid>
             <StackPanel HorizontalAlignment="Right" Margin="0 15 15 0">
                 
@@ -42,19 +44,24 @@
             </StackPanel>
         </Grid>
 		<Grid Grid.Row="2">
-            <Image Source="/Assets/Hotpot.png" Width="180"></Image>
+				<Canvas Height="200" Width="200">
+                    <Image Source="/Assets/Hotpot.png" HorizontalAlignment="Center" Width="180" Margin="13.2 13.2 0 0"></Image>
+                    <ProgressBar   Foreground="#403B58" x:Name="Bar" Height="200"  Classes="Circle" ShowProgressText="True" Value="{Binding progress}"></ProgressBar>
+                    <!-- <controls:CircularProgress Value="50" Minimum="0" Maximum="100" Foreground="Blue" Background="LightGray" Width="50" Height="50" /> -->
+
+				</Canvas>
+
+
         </Grid>
         <Grid Grid.Row="3">
             <Grid ColumnDefinitions="Auto Auto Auto" HorizontalAlignment="Center" Margin="0 0 0 40">
+
                 <Button Click="Angular_bracket_left_OnClick" CornerRadius="10" Background="#222222" Grid.Column="0"  FontSize="25" Foreground="White" x:Name="angular_bracket_left" Content="{Binding AngularBrackLeft}"></Button>
-                <Button x:Name="TimerButton" Grid.Column="1" CornerRadius="18" Background="#222222" FontSize="40" Content="{Binding minuteSeconds}" Foreground="White" Margin="45 0 45 2"></Button>
+                <Button x:Name="TimerButton" Grid.Column="1" CornerRadius="18" Background="#222222" FontSize="40" Content="{Binding minuteSeconds }" Foreground="White" Margin="45 0 45 2"></Button>
                 <!-- <TextBlock Grid.Column="1" FontSize="40" Text="{Binding minuteSeconds}" Foreground="White" Margin="45 0 45 2"></TextBlock> -->
-                <Button CornerRadius="10" Background="#222222" Grid.Column="2"  FontSize="25" x:Name="angular_bracket_right" Foreground="White" Content="{Binding AngularBrackRight}"></Button>
+                <Button CornerRadius="10" Background="#222222" Grid.Column="2"  FontSize="25" x:Name="angular_bracket_right" Foreground="White" Content="{Binding AngularBrackRight}" Click="Angular_bracket_right_OnClick"></Button>
 
 			</Grid>
-        </Grid>
-		<Grid Grid.Row="4">
-            <ProgressBar Height="20"  Classes="" ShowProgressText="True" Value="{Binding progress}"></ProgressBar>
         </Grid>
 
 	</Grid>
